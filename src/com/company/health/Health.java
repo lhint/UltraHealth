@@ -21,6 +21,11 @@ public class Health
       personAge = age;
    }///Additional constructor
 
+   public Health(int age)
+   {
+      personAge = age;
+   }
+
    //Setters
    public void setPersonName(String name)
    {

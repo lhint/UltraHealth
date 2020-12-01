@@ -174,7 +174,7 @@ public class HeartRate extends Health
 
    public String toString()
    {
-      return "";
+      return checkIsNormal(personAge, enteredHeartRate);
 
    }//toString
 
