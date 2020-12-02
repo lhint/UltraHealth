@@ -94,8 +94,8 @@ public class YourBMR extends Health
         }else if (personActivityLevel == 5) {
             personCalories = calcBMR * 1.9;
 
-        };
-      return personCalories;
+        }
+       return personCalories;
     }
 
 }//class

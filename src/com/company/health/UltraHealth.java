@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by brendanfitzpatrick on 02/12/2020
- * UPDATE COMMENTS ABOUT PROGRAM HERE
+ * Front end of the Health app that uses objects of the Classes created for each application.
  **/
 public class UltraHealth
 {
@@ -39,7 +39,7 @@ public class UltraHealth
                BMI myBMI = new BMI(0.0, 0.0, 0, 0);
                myBMI.calculateBMI();
                System.out.println(myBMI.toString());
-               System.out.println("");
+               System.out.println();
                break;
             case 2:
                HeartRate myHeartRate = new HeartRate("",0);
@@ -57,13 +57,7 @@ public class UltraHealth
             case 5:
                System.out.println("Are you sure you want to exit? Y/N \n\n");
                exit = keyboard.nextLine();
-               if ("Y".equals(exit))
-               {
-                  cont = false;
-               } else
-               {
-                  cont = true;
-               }
+               cont = !"Y".equals(exit);
          }
       }
 
