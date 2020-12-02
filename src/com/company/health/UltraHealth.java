@@ -1,5 +1,6 @@
 package com.company.health;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,7 @@ public class UltraHealth
       boolean cont = true;
       int menuChoice = 0;
       String exit;
-      System.out.print("Welcome to Ultra Health, Please choose from the options below:\n\n");
+      System.out.print("Welcome to Ultra Health, Please choose from the options below:\n");
 
       while (cont)
       {
@@ -32,6 +33,8 @@ public class UltraHealth
          }
 
          while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4 & menuChoice !=5);
+
+         //Need an error exception to overcome Strings/ doubles entered instead of ints.
 
          switch (menuChoice)
          {
@@ -55,9 +58,16 @@ public class UltraHealth
                SleepAverage mySleepAverage = new SleepAverage(0, 0, 0);
                break;
             case 5:
-               System.out.println("Are you sure you want to exit? Y/N \n\n");
-               exit = keyboard.nextLine();
-               cont = !"Y".equals(exit);
+               System.out.print("Are you sure you want to exit? Y/N \n");
+               exit = keyboard.next().toUpperCase();
+               if ("Y".equals(exit))
+               {
+                  cont = false;
+                  break;
+               } else
+               {
+                  cont = true;
+               }
          }
       }
 

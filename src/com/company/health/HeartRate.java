@@ -34,9 +34,9 @@ public class HeartRate extends Health
    {
       Scanner keyboard = new Scanner(System.in);
 
-      System.out.println("Please enter your name: ");
+      System.out.print("Please enter your name: ");
       personName = keyboard.nextLine();
-      System.out.println("Please enter your age: ");
+      System.out.print("Please enter your age: ");
       personAge = keyboard.nextInt();
    }
 
@@ -86,7 +86,7 @@ public class HeartRate extends Health
 
    public String toString()
    {
-      return (personName + ", your max heart rate is " + calculateHeartRate(personAge) + checkIsNormal(personAge));
+      return (personName + ", your max heart rate is " + calculateHeartRate(personAge) + checkIsNormal(personAge) + "\n");
 
    }//toString
 

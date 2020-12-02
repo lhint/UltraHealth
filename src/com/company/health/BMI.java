@@ -94,7 +94,7 @@ public class BMI extends Health
 
       DecimalFormat df = new DecimalFormat("00.0");
 
-      return ( "\nYour BMI is " + df.format(personBMI) + " is showing that for your height and weight you are " + rangeBMI());
+      return ( "Your BMI is " + df.format(personBMI) + " is showing that for your height and weight you are " + rangeBMI());
    } //toString
 
 
