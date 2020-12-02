@@ -1,6 +1,4 @@
 package com.company.health;
-
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -55,7 +53,9 @@ public class UltraHealth
                break;
 
             case 4:
-               SleepAverage mySleepAverage = new SleepAverage(0, 0, 0);
+               SleepAverage mySleepAverage = new SleepAverage(0, 0);
+               mySleepAverage.prompt();
+               System.out.println(mySleepAverage.toString());
                break;
             case 5:
                System.out.print("Are you sure you want to exit? Y/N \n");

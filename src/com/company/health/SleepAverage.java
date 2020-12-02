@@ -1,5 +1,4 @@
 package com.company.health;
-
 import java.util.Scanner;
 
 /**
@@ -11,24 +10,26 @@ public class SleepAverage extends Health
    final static int daysInWeek = 7;
    public int hoursSlept;
    public int minutesSlept;
+   public int weeklySleepAverage;
 
-   public SleepAverage(int hours, int minutes, int age)
+   public SleepAverage(int hours, int age)
    {
       personAge = age;
       hoursSlept = hours;
    }// default constructor
 
+   //Setters
    public void setHoursSlept(int hours)
    {
       hoursSlept = hours;
    }// set hours slept
-
 
    public void setAge (int age)
    {
       personAge = age;
    }
 
+   //Getters
    public int getHoursSlept()
    {
       return hoursSlept;
@@ -38,56 +39,64 @@ public class SleepAverage extends Health
       return personAge;
    }
 
-   public void sleepComparison(int count) //Change return type to string?
+   public void prompt()
    {
-      Scanner keyboard = new Scanner(System.in);
-      int number = 1;
-      int weeklySleepAverage;
-      int personAge = getPersonAge();
-
-      for (count = 0; count < 7; count++)
+      for (int count = 0; count < 7; count++)
       {
-         System.out.print("How many hours did you sleep on day " + number++);
+         System.out.print("How many hours did you sleep on day " + (count+1) + ":");
+         Scanner keyboard = new Scanner(System.in);
          weeklySleepAverage = keyboard.nextInt();
-         //return weeklySleepAverage; //Return should be in the if statements
 
-         if (personAge <= 17 && weeklySleepAverage == 63) //&& weeklySleepAverage <= 45
-         {
-            System.out.print("You are sleeping the correct amount for your age");
-            //Maybe do return String instead and return the answer rather than the print statement then do a toString method to print answer?
-         } else if (personAge <= 17 && weeklySleepAverage < 63)
-         {
-            System.out.print("You are not sleeping enough for you age");
-            //if (weeklySleepAverage == 45) Might be best to do age if first then a nested statement to check the weeklySleepAverage?
-            // {
-         } else if (personAge <= 17 && weeklySleepAverage > 63)
-         {
-            System.out.print("You are sleeping to much for your age");
-         }
+         //Store values in an array? Then add up in calculate method.
+      }
+   }
 
+   public int calculate(int weeklySleepAverage)
+   {
+      //Calculate day hours (from array) to weekly and return total.
+      return 0;
+   }
 
-         if (personAge >= 18 && personAge <= 64 && weeklySleepAverage == 56)
+   public String sleepComparison(int age) //Pass total and age to check
+   {
+         if (age <= 17 && weeklySleepAverage == 63) //&& weeklySleepAverage <= 45
          {
-            System.out.print("You are sleeping the correct amount for your age");
-            // return ""
-         } else if ((personAge >= 18 && personAge <= 25 && weeklySleepAverage < 56))
+            return ("You are sleeping the correct amount for your age");
+         } else if (age<= 17 && weeklySleepAverage < 63)
          {
-            System.out.print("You are not sleeping enough for you age");
-         } else if ((personAge >= 18 && personAge <= 25 && weeklySleepAverage > 56))
-         {
-            System.out.print("You are sleeping to much for your age");
-         }
+            return ("You are not sleeping enough for you age");
 
-         if (personAge >= 65 && weeklySleepAverage == 49)
+         } else if (age <= 17 && weeklySleepAverage > 63)
          {
-            System.out.print("You are sleeping the correct amount for your age");
-         } else if (personAge >= 65 && weeklySleepAverage < 49)
+            return ("You are sleeping to much for your age");
+         } else if (age >= 18 && age <= 64 && weeklySleepAverage == 56)
          {
-            System.out.print("You are not sleeping enough for you age");
-         } else if (personAge >= 65 && weeklySleepAverage > 49)
+            return ("You are sleeping the correct amount for your age");
+         } else if ((age >= 18 && age <= 25 && weeklySleepAverage < 56))
          {
-            System.out.print("You are sleeping to much for your age");
-         }
+            return ("You are not sleeping enough for you age");
+         } else if (age >= 18 && age <= 25 && weeklySleepAverage > 56)
+         {
+            return ("You are sleeping to much for your age");
+         } else if (age >= 65 && weeklySleepAverage == 49)
+         {
+            return ("You are sleeping the correct amount for your age");
+         } else if (age >= 65 && weeklySleepAverage < 49)
+         {
+            return ("You are not sleeping enough for you age");
+         } else if (age >= 65 && weeklySleepAverage > 49)
+         {
+            return ("You are sleeping to much for your age");
+         } else
+            {
+               return ("Please enter valid age!");
+            }
 
-}}}
+   }//Sleep Comparison
+
+   public String toString()
+   {
+      return (sleepComparison(personAge) + "\n");
+   }//toString
+}//Class
 
