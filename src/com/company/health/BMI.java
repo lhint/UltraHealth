@@ -59,7 +59,8 @@ public class BMI extends Health
 
    //Method to calculate BMI = weight kilograms/ ( height * height )
 
-   public void calculateBMI(double personWeight, double personHeight, double personBMI) {
+   public void calculateBMI() {
+     //double personWeight, double personHeight, double personBMI
       Scanner keyboard = new Scanner (System.in);
 
       System.out.println(" Please enter your weight in Kilograms: ");

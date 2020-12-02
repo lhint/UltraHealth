@@ -14,8 +14,8 @@ public class UltraHealth
    {
       Scanner keyboard = new Scanner(System.in);
       boolean cont = true;
-      int menuChoice;
-      System.out.print("Welcome to Ultra Health, Please choose from the options below");
+      int menuChoice = 0;
+      System.out.print("Welcome to Ultra Health, Please choose from the options below\n\n");
 
       while (cont)
       {
@@ -34,33 +34,27 @@ public class UltraHealth
 
          while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4);
 
-      }
-      switch (menuChoice)
-      {
-         case 1:
 
-
-            break;
-         case 2:
-            System.out.println("2. Find square root \n\n");
-            break;
-         case 3:
-
-            System.out.println("3. Test if Odd or Evan \n\n");
-            break;
-         default:
-            System.out.println("Are you sure you want to exit? Y/N \n\n");
-            menuChoice2 = keyboard.next().toUpperCase();
-
-            if ("Y".equals(menuChoice2))
-            {
-               cont = false;
+         switch (menuChoice)
+         {
+            case 1:
+               BMI myBMI = new BMI(0.0, 0.0, 0, 0);
+               myBMI.calculateBMI();
+               myBMI.toString();
+               System.out.println("");
                break;
-            } else
-            {
-               cont = true;
-            }
+            case 2:
+               HeartRate myHeartRate = new HeartRate("",0);
+               myHeartRate.
+               break;
+            case 3:
 
+               System.out.println("3. Test if Odd or Evan \n\n");
+               break;
+            default:
+               System.out.println("Are you sure you want to exit? Y/N \n\n");
+         }
+      }
 
       }//main
    }//class

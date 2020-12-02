@@ -29,6 +29,8 @@ public class HeartRate extends Health
       return currentAverage;
    }//calculateHeartRate
 
+   public void 
+
    //Method to check if the heart rate is normal for age.
 
    public String checkIsNormal(int age)

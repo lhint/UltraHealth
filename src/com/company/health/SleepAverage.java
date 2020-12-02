@@ -39,7 +39,7 @@ public class SleepAverage extends Health
       return minutesSlept;
    }
 
-   public String sleepComparison(int count) //Change return type to string?
+   public void sleepComparison(int count) //Change return type to string?
    {
       Scanner keyboard = new Scanner(System.in);
       int number = 1;
