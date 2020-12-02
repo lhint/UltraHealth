@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by brendanfitzpatrick on 02/12/2020
  * UPDATE COMMENTS ABOUT PROGRAM HERE
  **/
-public class UltraHeatlh
+public class UltraHealth
 {
    final int TERMINATOR = 5;
 
@@ -38,7 +38,7 @@ public class UltraHeatlh
       switch (menuChoice)
       {
          case 1:
-            
+
 
             break;
          case 2:
@@ -62,5 +62,5 @@ public class UltraHeatlh
             }
 
 
-   }//main
-}//class
+      }//main
+   }//class
