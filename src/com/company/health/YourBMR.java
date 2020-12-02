@@ -72,9 +72,6 @@ public class YourBMR extends Health
         System.out.println("4 - Very Active: Vigorous exercise on most days");
         System.out.println("5 - Extremely Active: Physical job and intense exercise 6-7 days a week");
         personActivityLevel = keyboard.nextInt();
-
-
-
     }
 
     public double BMRExercise() {
@@ -100,11 +97,5 @@ public class YourBMR extends Health
         };
       return personCalories;
     }
-
-
-
-
-
-
 
 }//class

@@ -1,4 +1,5 @@
 package com.company.health;
+import java.util.Scanner;
 
 /**
  * Created by Luke Hinton on 29/11/2020
@@ -29,7 +30,15 @@ public class HeartRate extends Health
       return currentAverage;
    }//calculateHeartRate
 
-   public void 
+   public void promptDetails()
+   {
+      Scanner keyboard = new Scanner(System.in);
+
+      System.out.println("Please enter your name: ");
+      personName = keyboard.nextLine();
+      System.out.println("Please enter your age: ");
+      personAge = keyboard.nextInt();
+   }
 
    //Method to check if the heart rate is normal for age.
 
@@ -61,7 +70,7 @@ public class HeartRate extends Health
       } else if (age >= 60 && age < 65)
       {
          return (" and should be between 155 - 160 for your age");
-      } else if (age >= 65 && age < 70)
+      } else if (age>= 65 && age < 70)
       {
          return (" and should be between 150 - 155 for your age");
       } else if (age >= 70)

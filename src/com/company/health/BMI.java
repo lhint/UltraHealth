@@ -1,5 +1,6 @@
 package com.company.health;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 /**
       *created by Jayne on ${30/11/2020}
@@ -63,15 +64,15 @@ public class BMI extends Health
      //double personWeight, double personHeight, double personBMI
       Scanner keyboard = new Scanner (System.in);
 
-      System.out.println(" Please enter your weight in Kilograms: ");
+      System.out.print(" Please enter your weight in Kilograms: ");
       personWeight = keyboard.nextDouble();
 
-      System.out.println(" Please enter your height in metres: ");
+      System.out.print(" Please enter your height in metres: ");
       personHeight = keyboard.nextDouble();
 
       personBMI = (personWeight / ( personHeight * personHeight));
 
-      System.out.println(" Your bmi is : " + personBMI );
+      //System.out.println(" Your bmi is : " + personBMI );
 
 
 
@@ -79,19 +80,21 @@ public class BMI extends Health
 
    public String rangeBMI(){
       if(personBMI < 18.5 )
-         return ("Underweight");
+         return ("underweight");
       else if(personBMI < 25)
-         return "Normal";
+         return "normal";
       else if (personBMI < 30)
-         return "Overweight";
+         return "overweight";
       else
-         return "Obese";
+         return "obese";
 
    }
 
    public String toString() {
 
-      return ( "Your BMI " + personBMI + " is showing that for your height and weight you are " + rangeBMI());
+      DecimalFormat df = new DecimalFormat("00.0");
+
+      return ( "\nYour BMI is " + df.format(personBMI) + " is showing that for your height and weight you are " + rangeBMI());
    } //toString
 
 

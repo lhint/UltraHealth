@@ -8,14 +8,12 @@ import java.util.Scanner;
  **/
 public class UltraHealth
 {
-   final int TERMINATOR = 5;
-
    public static void main(String[] args)
    {
       Scanner keyboard = new Scanner(System.in);
       boolean cont = true;
       int menuChoice = 0;
-      System.out.print("Welcome to Ultra Health, Please choose from the options below\n\n");
+      System.out.print("Welcome to Ultra Health, Please choose from the options below:\n\n");
 
       while (cont)
       {
@@ -26,26 +24,26 @@ public class UltraHealth
             System.out.println("2. Max Heart Rate ");
             System.out.println("3. Basal Metabolic Rate(BMR) ");
             System.out.println("4. Sleep Average");
-            System.out.println("5. Exit");
+            System.out.println("5. Exit\n");
 
-
+            System.out.print("Please enter choice: ");
             menuChoice = keyboard.nextInt();
          }
 
-         while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4);
-
+         while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4 & menuChoice !=5);
 
          switch (menuChoice)
          {
             case 1:
                BMI myBMI = new BMI(0.0, 0.0, 0, 0);
                myBMI.calculateBMI();
-               myBMI.toString();
+               System.out.println(myBMI.toString());
                System.out.println("");
                break;
             case 2:
                HeartRate myHeartRate = new HeartRate("",0);
-               myHeartRate.
+               myHeartRate.promptDetails();
+               System.out.println(myHeartRate.toString());
                break;
             case 3:
 
