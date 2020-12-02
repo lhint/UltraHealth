@@ -1,3 +1,4 @@
+package com.company.health;
 import java.util.Scanner;
 
 /**
