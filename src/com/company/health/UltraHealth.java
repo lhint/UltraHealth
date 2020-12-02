@@ -13,6 +13,7 @@ public class UltraHealth
       Scanner keyboard = new Scanner(System.in);
       boolean cont = true;
       int menuChoice = 0;
+      String exit;
       System.out.print("Welcome to Ultra Health, Please choose from the options below:\n\n");
 
       while (cont)
@@ -47,16 +48,22 @@ public class UltraHealth
                break;
             case 3:
 
-               System.out.println("3. Test if Odd or Evan \n\n");
+               //BMR
                break;
 
             case 4:
-               SleepAverage mySleepAverage = new SleepAverage(0, 0, 0)
-               {
-                  mySleepAverage.
-               }
-            default:
+               SleepAverage mySleepAverage = new SleepAverage(0, 0, 0);
+               break;
+            case 5:
                System.out.println("Are you sure you want to exit? Y/N \n\n");
+               exit = keyboard.nextLine();
+               if ("Y".equals(exit))
+               {
+                  cont = false;
+               } else
+               {
+                  cont = true;
+               }
          }
       }
 
