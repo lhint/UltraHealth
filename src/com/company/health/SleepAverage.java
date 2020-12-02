@@ -9,14 +9,13 @@ import java.util.Scanner;
 public class SleepAverage extends Health
 {
    final static int daysInWeek = 7;
-   protected int hoursSlept;
-   protected int minutesSlept;
+   public int hoursSlept;
+   public int minutesSlept;
 
    public SleepAverage(int hours, int minutes, int age)
    {
-      super(age);
+      personAge = age;
       hoursSlept = hours;
-      minutesSlept = minutes;
    }// default constructor
 
    public void setHoursSlept(int hours)
@@ -24,19 +23,19 @@ public class SleepAverage extends Health
       hoursSlept = hours;
    }// set hours slept
 
-   public void setMinutesSlept(int minutes)
+
+   public void setAge (int age)
    {
-      minutesSlept = minutes;
-   }// set minutes slept
+      personAge = age;
+   }
 
    public int getHoursSlept()
    {
       return hoursSlept;
    }
 
-   public int getMinutesSlept()
-   {
-      return minutesSlept;
+   public int getPersonAge() {
+      return personAge;
    }
 
    public void sleepComparison(int count) //Change return type to string?
@@ -48,7 +47,6 @@ public class SleepAverage extends Health
 
       for (count = 0; count < 7; count++)
       {
-
          System.out.print("How many hours did you sleep on day " + number++);
          weeklySleepAverage = keyboard.nextInt();
          //return weeklySleepAverage; //Return should be in the if statements
@@ -91,13 +89,5 @@ public class SleepAverage extends Health
             System.out.print("You are sleeping to much for your age");
          }
 
-
-         // if (personAge < 25 && weeklySleepAverage == 45)
-         //{
-         //}
-         //return 2; //Just to stop the program flagging an error. Can remove and replace with the returns in if statements.
-
-      }//sleepComparison
-   }
-}//Class
+}}}
 

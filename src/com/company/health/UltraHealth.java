@@ -51,6 +51,12 @@ public class UltraHealth
 
                System.out.println("3. Test if Odd or Evan \n\n");
                break;
+
+            case 4:
+               SleepAverage mySleepAverage = new SleepAverage(0, 0, 0)
+               {
+                  mySleepAverage.
+               }
             default:
                System.out.println("Are you sure you want to exit? Y/N \n\n");
          }
