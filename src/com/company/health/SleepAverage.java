@@ -7,7 +7,7 @@ import java.util.Scanner;
  **/
 public class SleepAverage extends Health
 {
-   final int SIZE = 7;
+
    final static int daysInWeek = 7;
    public int hoursSlept;
    public int minutesSlept;
@@ -42,27 +42,26 @@ public class SleepAverage extends Health
 
    public void prompt()
    {
-      for (int count = 0; count < 7; count++)
-      {
+
          Scanner keyboard = new Scanner(System.in);
 
          //Array
-
+         final int SIZE = 6;
          int[] daysInWeek = new int[SIZE];
 
-         for (int index = 0; index < SIZE; index++){
-            System.out.print("How many hours did you sleep on day " + (count+1) + ":");
+         for (int index = 0; index < SIZE; index++)
+         {
+            System.out.print("How many hours did you sleep on day " + (index + 1) + ":");
             daysInWeek[index] = keyboard.nextInt();
          }
-      }
+
    }
 
-   public int calculate(int daysInWeek)
+   public int calculate(int [] daysInWeek)
    {
       //Calculate day hours (from array) to weekly and return total.
-      for (int index = 0; index < SIZE; index++){
-         return daysInWeek[index];
-      }
+   weeklySleepAverage = daysInWeek[0] + daysInWeek[1] + daysInWeek[2] + daysInWeek[3] + daysInWeek[4] + daysInWeek[5] + daysInWeek[6] + daysInWeek[7];
+      return weeklySleepAverage;
    }
 
    public String sleepComparison(int age) //Pass total and age to check
@@ -104,7 +103,7 @@ public class SleepAverage extends Health
 
    public String toString()
    {
-      return (sleepComparison(personAge) + "\n");
+      return ("You have slept " + weeklySleepAverage + " " + sleepComparison(personAge) + "\n");
    }//toString
 }//Class
 
