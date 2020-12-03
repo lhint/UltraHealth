@@ -53,9 +53,9 @@ public class UltraHealth
                break;
 
             case 4:
-               SleepAverage mySleepAverage = new SleepAverage(0, 0);
+               SleepAverage mySleepAverage = new SleepAverage("", 0, 0);
                mySleepAverage.prompt();
-               mySleepAverage.calculate(m);
+               mySleepAverage.calculate();
                System.out.println(mySleepAverage.toString());
                break;
             case 5:
