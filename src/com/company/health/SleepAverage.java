@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 /**
  * Created by brendanfitzpatrick on 29/11/2020
- * UPDATE COMMENTS ABOUT PROGRAM HERE
+ * A programme too evaluate if the user is sleeping just enough, too much, or too little
  **/
 public class SleepAverage extends Health
 {
+   final int SIZE = 7;
    final static int daysInWeek = 7;
    public int hoursSlept;
    public int minutesSlept;
@@ -43,18 +44,25 @@ public class SleepAverage extends Health
    {
       for (int count = 0; count < 7; count++)
       {
-         System.out.print("How many hours did you sleep on day " + (count+1) + ":");
          Scanner keyboard = new Scanner(System.in);
-         weeklySleepAverage = keyboard.nextInt();
 
-         //Store values in an array? Then add up in calculate method.
+         //Array
+
+         int[] daysInWeek = new int[SIZE];
+
+         for (int index = 0; index < SIZE; index++){
+            System.out.print("How many hours did you sleep on day " + (count+1) + ":");
+            daysInWeek[index] = keyboard.nextInt();
+         }
       }
    }
 
-   public int calculate(int weeklySleepAverage)
+   public int calculate(int daysInWeek)
    {
       //Calculate day hours (from array) to weekly and return total.
-      return 0;
+      for (int index = 0; index < SIZE; index++){
+         return daysInWeek[index];
+      }
    }
 
    public String sleepComparison(int age) //Pass total and age to check
