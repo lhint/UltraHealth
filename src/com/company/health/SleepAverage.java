@@ -61,7 +61,8 @@ public class SleepAverage extends Health
    {
       //Calculate day hours (from array) to weekly and return total.
    weeklySleepAverage = daysInWeek[0] + daysInWeek[1] + daysInWeek[2] + daysInWeek[3] + daysInWeek[4] + daysInWeek[5] + daysInWeek[6] + daysInWeek[7];
-      return weeklySleepAverage;
+      System.out.print(weeklySleepAverage);
+   return weeklySleepAverage;
    }
 
    public String sleepComparison(int age) //Pass total and age to check
