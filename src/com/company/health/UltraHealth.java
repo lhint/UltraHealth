@@ -10,6 +10,7 @@ public class UltraHealth
    public static void main(String[] args)
    {
       Scanner keyboard = new Scanner(System.in);
+
       boolean cont = true;
       int menuChoice = 0;
       String exit;
@@ -48,6 +49,13 @@ public class UltraHealth
                System.out.println(myHeartRate.toString());
                break;
             case 3:
+               YourBMR myBMR = new YourBMR("male", 0,0,0);
+               myBMR.promptDetails();
+               myBMR.calculateBMR();
+               myBMR.activityLevel();
+               myBMR.BMRExercise();
+               System.out.println(myBMR.toString());
+               System.out.println();
 
                //BMR
                break;

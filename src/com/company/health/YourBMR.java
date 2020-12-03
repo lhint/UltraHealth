@@ -1,5 +1,6 @@
 package com.company.health;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 /**
  * Created by Cillian McKermitt on 30/11/2020
  * UPDATE COMMENTS ABOUT PROGRAM HERE
@@ -7,12 +8,14 @@ import java.util.Scanner;
 public class YourBMR extends Health
 {
     //Variables
+    DecimalFormat df = new DecimalFormat("00.##");
     Scanner keyboard = new Scanner(System.in);
     private String personGender;
     private int personAge;
     private int personHeight;
     private int personActivityLevel;
     private double personWeight;
+    private double personCalories;
 
 
    // Constructor
@@ -23,6 +26,7 @@ public class YourBMR extends Health
      weight = personWeight;
 
     }
+
 
     //Getters
     public String getGender() {return personGender;}
@@ -44,12 +48,25 @@ public class YourBMR extends Health
         personWeight = personWeight;
     }
 
+    public void promptDetails() {
+        System.out.print("Please enter your gender (Male/Female): ");
+        personGender = keyboard.nextLine();
+        System.out.print("Please enter your age: ");
+        personAge = keyboard.nextInt();
+        System.out.print("Please enter your height (in cm): ");
+        personHeight = keyboard.nextInt();
+        System.out.print("Please enter your weight (in KG): ");
+        personWeight = keyboard.nextDouble();
+        System.out.println();
+        System.out.println();
+    }
+
 
     public double calculateBMR() {
         double BMR;
 
         //Mifflin-St Jeor Equation
-        if (personGender == "male") {
+        if (personGender == "Male") {
             BMR = (10 * personWeight) + (6.25 * personHeight) - (5 * personAge) + 5;
 
         }
@@ -61,7 +78,7 @@ public class YourBMR extends Health
         return BMR;
     }
 
-    public void activityLevel(int personActivityLevel) {
+    public int activityLevel() {
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -71,12 +88,14 @@ public class YourBMR extends Health
         System.out.println("3 - Moderately Active: Moderate exercise 3-5 days a week");
         System.out.println("4 - Very Active: Vigorous exercise on most days");
         System.out.println("5 - Extremely Active: Physical job and intense exercise 6-7 days a week");
+        System.out.print("Please enter your choice: ");
         personActivityLevel = keyboard.nextInt();
+        System.out.println();
+        return personActivityLevel;
     }
 
     public double BMRExercise() {
-        
-        double personCalories = 0;
+
         double calcBMR = calculateBMR();
 
         if (personActivityLevel == 1) {
@@ -96,6 +115,11 @@ public class YourBMR extends Health
 
         }
        return personCalories;
+    }
+
+    public String toString() {
+
+        return "Your BMR (daily calorie need) is " + df.format(personCalories) + " calories.";
     }
 
 }//class
