@@ -18,7 +18,6 @@ public class UltraHealth
 
       while (cont)
       {
-
          do
          {
             System.out.println("1. Body Mass index(BMI) ");
@@ -57,7 +56,6 @@ public class UltraHealth
                System.out.println(myBMR.toString());
                System.out.println();
 
-               //BMR
                break;
 
             case 4:
