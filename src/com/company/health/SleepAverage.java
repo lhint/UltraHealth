@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * Created by brendanfitzpatrick on 29/11/2020
- * A programme too evaluate if the user is sleeping just enough, too much, or too little
+ * A programme too evaluate if the user is sleeping just enough, too much, or too little per week
  **/
 public class SleepAverage extends Health
 {
@@ -41,7 +41,7 @@ public class SleepAverage extends Health
          personName = keyboard.nextLine();
 
          //Age
-         System.out.print("Please enter age: ");
+         System.out.print("Please enter age(7+): ");
          personAge = keyboard.nextInt();
 
          //Array for hours slept
@@ -66,45 +66,107 @@ public class SleepAverage extends Health
    public String sleepComparison(int age, int weeklySleepAverage) //Check this if statements are correct.
    {
 
-      //May need to do if statements for age and then a nested if for weeklySleepAverage.
-         if (age <= 17 && weeklySleepAverage == 63) //&& weeklySleepAverage <= 45
-         {
-            return ("You are sleeping the correct amount for your age");
-         } else if (age<= 17 && weeklySleepAverage < 63)
-         {
-            return ("You are not sleeping enough for you age");
+      /* May need to do if statements for age and then a nested if for weeklySleepAverage. */
 
-         } else if (age <= 17 && weeklySleepAverage > 63)
+      if (age < 7)
+         return("Please enter a valid age for comparison");
+
+      if (age  >= 7 && age <= 13)
+      {
+         switch(weeklySleepAverage)
          {
-            return ("You are sleeping to much for your age");
-         } else if (age >= 18 && age <= 64 && weeklySleepAverage == 56)
+            case 63: case 64: case 65: case 67: case 68: case 69: case 70: case 71: case 72:
+            case 73: case 74: case 75: case 76: case 77:
+               return ("You are getting the correct amount of sleep for your age (Recommended between 56 - 77 hours per week)");
+         }
+        if (age  >= 7 && age <= 13)
+           if (weeklySleepAverage < 63)
+           {
+              return ("You are not sleeping enough for you age (Recommended between 56 - 77 hours per week)");
+           }
+        if (age  >= 7 && age <= 13)
+        {
+           if (weeklySleepAverage > 77)
+              return ("You are not sleeping enough for you age (Recommended between 56 - 77 hours per week)");
+        }
+      }
+
+      if (age >= 14 && age <= 17)
+      {
+         switch (weeklySleepAverage)
          {
-            return ("You are sleeping the correct amount for your age");
-         } else if ((age >= 18 && age <= 25 && weeklySleepAverage < 56))
+            case 56: case 57: case 58: case 59: case 60: case 61: case 62: case 63:
+            case 64: case 65: case 66: case 67: case 68: case 69: case 70:
+               return ("You are getting the correct amount of sleep for your age (Recommended between 56 - 70 hours per week)");
+         }
+
+         if (age >= 14 && age <= 17)
          {
-            return ("You are not sleeping enough for you age");
-         } else if (age >= 18 && age <= 25 && weeklySleepAverage > 56)
+            if (weeklySleepAverage < 56)
+               return ("You are not sleeping enough for you age (Recommended between 56 - 70 hours per week)");
+         }
+
+         if (age <= 17)
          {
-            return ("You are sleeping to much for your age");
-         } else if (age >= 65 && weeklySleepAverage == 49)
+            if (weeklySleepAverage > 70)
+               return ("You are sleeping to much for your age (Recommended between 56 - 70 hours per week");
+         }
+      }
+
+         if (age >= 18 && age <= 64)
          {
-            return ("You are sleeping the correct amount for your age");
-         } else if (age >= 65 && weeklySleepAverage < 49)
-         {
-            return ("You are not sleeping enough for you age");
-         } else if (age >= 65 && weeklySleepAverage > 49)
-         {
-            return ("You are sleeping to much for your age");
-         } else //Need to add an exception if no age is entered or if the person has slept under the average. Check the statements.
+            switch (weeklySleepAverage)
             {
-               return ("Please enter valid age!");
+               case 49: case 50: case 51: case 52: case 53: case 54: case 55: case 56:
+               case 57: case 58: case 59: case 60: case 61: case 62: case 63:
+                  return ("You are getting the correct amount of sleep for your age (Recommended between 49 - 63 hours per week) ");
             }
 
-   }//Sleep Comparison
+            if (age >= 18 && age <= 64)
+            {
+               if (weeklySleepAverage < 49)
+
+                  return ("You are not sleeping enough for your age (Recommended between 49 - 63 hours per week) ");
+            }
+
+            if (age >= 18 && age <= 64)
+            {
+               if (weeklySleepAverage > 63)
+
+                  return ("You are sleeping to much for your age(Recommended between 49 - 63 hours per week");
+            }
+         }
+         if (age >= 65 && age <= 122)
+         {
+            switch (weeklySleepAverage)
+            {
+               case 49: case 50: case 51: case 52: case 53: case 54: case 55: case 56:
+                  return ("You are sleeping the correct amount for your age (Recommended  between 49 - 56 hours per week)");
+
+            }
+            if (age >= 65 && age <= 122)
+            {
+               if (weeklySleepAverage < 49)
+                  return ("You are not sleeping enough for you age (Recommended between 49 - 56 hours per week)");
+            }
+
+            if (age >= 65 && age <= 122)
+            {
+               if (weeklySleepAverage > 56)
+                  return ("You are sleeping to much for your age(Recommended between 49 - 56 hours per week)");
+            }
+         }
+         else //Need to add an exception if no age is entered or if the person has slept under the average. Check the statements.
+         {
+            return ("Please enter valid age!");
+         }
+
+         return null;
+      }//Sleep Comparison
 
    public String toString()
    {
-      return (personName + " have slept " + weeklySleepAverage + " hours, " + sleepComparison(personAge, weeklySleepAverage) + "\n");
+      return (personName + " you have slept " + weeklySleepAverage + " hours, " + sleepComparison(personAge, weeklySleepAverage) + "\n");
    }//toString
 }//Class
 
