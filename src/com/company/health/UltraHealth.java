@@ -55,9 +55,7 @@ public class UltraHealth
                myBMR.BMRExercise();
                System.out.println(myBMR.toString());
                System.out.println();
-
                break;
-
             case 4:
                SleepAverage mySleepAverage = new SleepAverage("", 0, 0);
                mySleepAverage.prompt();
@@ -70,7 +68,6 @@ public class UltraHealth
                if ("Y".equals(exit))
                {
                   cont = false;
-                  break;
                } else
                {
                   cont = true;
