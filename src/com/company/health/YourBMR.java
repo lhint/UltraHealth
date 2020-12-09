@@ -68,11 +68,10 @@ public class YourBMR extends Health
         //Mifflin-St Jeor Equation
         if (personGender == "Male") {
             BMR = (10 * personWeight) + (6.25 * personHeight) - (5 * personAge) + 5;
-
         }
         else {
             BMR = (10 * personWeight) + (6.25 * personHeight) - (5 * personAge) - 161;
-
+            
         }
 
         return BMR;
