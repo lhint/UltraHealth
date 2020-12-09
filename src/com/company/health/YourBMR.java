@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 public class YourBMR extends Health
 {
     //Variables
-    DecimalFormat df = new DecimalFormat("00.##");
+    DecimalFormat df = new DecimalFormat("00.0");
     Scanner keyboard = new Scanner(System.in);
     private String personGender;
     private int personAge;
