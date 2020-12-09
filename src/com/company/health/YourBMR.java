@@ -21,10 +21,9 @@ public class YourBMR extends Health
    // Constructor
     public YourBMR(String gender, int age, int height, double weight) {
        super (age);
-     gender = personGender;
-     height = personHeight;
-     weight = personWeight;
-
+       gender = personGender;
+       height = personHeight;
+       weight = personWeight;
     }
 
 
@@ -71,7 +70,7 @@ public class YourBMR extends Health
         }
         else {
             BMR = (10 * personWeight) + (6.25 * personHeight) - (5 * personAge) - 161;
-            
+
         }
 
         return BMR;

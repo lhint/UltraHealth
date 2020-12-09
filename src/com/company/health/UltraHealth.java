@@ -1,4 +1,5 @@
 package com.company.health;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -12,43 +13,39 @@ public class UltraHealth
       Scanner keyboard = new Scanner(System.in);
 
       boolean cont = true;
-      int menuChoice = 0;
+      int menuChoice;
       String exit;
       System.out.print("Welcome to Ultra Health, Please choose from the options below:\n");
 
-      while (cont)
-      {
-         do
+         while (cont)
          {
-            System.out.println("1. Body Mass index(BMI) ");
-            System.out.println("2. Max Heart Rate ");
-            System.out.println("3. Basal Metabolic Rate(BMR) ");
-            System.out.println("4. Sleep Average");
-            System.out.println("5. Exit\n");
+            do {
 
-            System.out.print("Please enter choice: ");
-            menuChoice = keyboard.nextInt();
-         }
-
-         while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4 & menuChoice !=5);
-
-         //Need an error exception to overcome Strings/ doubles entered instead of ints.
+            try
+            {
+               menuChoice = prompt();
+            } catch (InputMismatchException error)
+            {
+               keyboard.nextLine();
+               menuChoice = prompt();
+            }
+         } while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4 & menuChoice != 5);
 
          switch (menuChoice)
          {
             case 1:
-               BMI myBMI = new BMI(0.0, 0.0, 0, 0);
+               BMI myBMI = new BMI(0.0, 0, 0, 0);
                myBMI.calculateBMI();
                System.out.println(myBMI.toString());
                System.out.println();
                break;
             case 2:
-               HeartRate myHeartRate = new HeartRate("",0);
+               HeartRate myHeartRate = new HeartRate("", 0);
                myHeartRate.promptDetails();
                System.out.println(myHeartRate.toString());
                break;
             case 3:
-               YourBMR myBMR = new YourBMR("male", 0,0,0);
+               YourBMR myBMR = new YourBMR("male", 0, 0, 0);
                myBMR.promptDetails();
                myBMR.calculateBMR();
                myBMR.activityLevel();
@@ -72,8 +69,20 @@ public class UltraHealth
                {
                   cont = true;
                }
-         }
-      }
-
+            }//switch
+         }//while
       }//main
-   }//class
+
+   public static int prompt()
+   {
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("1. Body Mass index(BMI) ");
+      System.out.println("2. Max Heart Rate ");
+      System.out.println("3. Basal Metabolic Rate(BMR) ");
+      System.out.println("4. Sleep Average");
+      System.out.println("5. Exit\n");
+
+      System.out.print("Please enter choice: ");
+      return keyboard.nextInt();
+   }
+}//class

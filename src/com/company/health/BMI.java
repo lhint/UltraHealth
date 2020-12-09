@@ -15,8 +15,7 @@ public class BMI extends Health
    public int personAge;
    public double personBMI;
 
-
-
+   
    public BMI(double personWeight, int age,double personHeight, double personBMI) {
       super (age);
       this.personWeight = personWeight;
