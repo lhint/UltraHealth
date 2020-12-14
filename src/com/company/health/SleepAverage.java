@@ -35,21 +35,27 @@ public class SleepAverage extends Health
 
    public void prompt()
    {
-         Scanner keyboard = new Scanner(System.in);
-         //Name
-         System.out.print("Please enter name: ");
-         personName = keyboard.nextLine();
+      Scanner keyboard = new Scanner(System.in);
+      //Name
+      System.out.print("Please enter name: ");
+      personName = keyboard.nextLine();
 
-         //Age
-         System.out.print("Please enter age(7+): ");
-         personAge = keyboard.nextInt();
+      //Age
+      System.out.print("Please enter age(7+): ");
+      personAge = keyboard.nextInt();
 
+      if (personAge < 7 || personAge > 120)
+      {
+         System.out.println("This is an invalid age");
+      } else
+      {
          //Array for hours slept
          for (int index = 0; index < SIZE; index++)
          {
             System.out.print("How many hours did you sleep on day " + (index + 1) + ":");
             daysInWeek[index] = keyboard.nextInt();
          }
+      }
    }
 
    public int calculate()
