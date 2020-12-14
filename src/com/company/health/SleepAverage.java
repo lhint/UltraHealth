@@ -114,7 +114,7 @@ public class SleepAverage extends Health
          if (age >= 14 && age <=17)
          {
             if (weeklySleepAverage > 70)
-               return ("You are sleeping to much for your age (Recommended between 56 - 70 hours per week");
+               return ("You are sleeping to much for your age (Recommended between 56 - 70 hours per week)");
          }
       }
 
@@ -124,7 +124,7 @@ public class SleepAverage extends Health
             {
                case 49: case 50: case 51: case 52: case 53: case 54: case 55: case 56:
                case 57: case 58: case 59: case 60: case 61: case 62: case 63:
-                  return ("You are getting the correct amount of sleep for your age (Recommended between 49 - 63 hours per week) ");
+                  return ("You are getting the correct amount of sleep for your age (Recommended between 49 - 63 hours per week)");
             }
 
             if (age >= 18 && age <= 64)

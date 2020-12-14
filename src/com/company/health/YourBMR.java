@@ -49,7 +49,7 @@ public class YourBMR extends Health
 
     public void promptDetails() {
         System.out.print("Please enter your gender (Male/Female): ");
-        personGender = keyboard.nextLine();
+        personGender = keyboard.nextLine().toUpperCase();
         System.out.print("Please enter your age: ");
         personAge = keyboard.nextInt();
         System.out.print("Please enter your height (in cm): ");
@@ -65,7 +65,7 @@ public class YourBMR extends Health
         double BMR;
 
         //Mifflin-St Jeor Equation
-        if (personGender == "Male") {
+        if (personGender.equals("MALE") || personGender.equals("M")) {
             BMR = (10 * personWeight) + (6.25 * personHeight) - (5 * personAge) + 5;
         }
         else {
