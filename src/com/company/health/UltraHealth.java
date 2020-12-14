@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Created by brendanfitzpatrick on 02/12/2020
+ * Created by Luke Hinton, brendanfitzpatrick, Jayne Grant, Cillian mcKermitt on 02/12/2020
  * Front end of the Health app that uses objects of the Classes created for each application.
  **/
 public class UltraHealth

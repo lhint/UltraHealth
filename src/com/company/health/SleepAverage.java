@@ -44,7 +44,7 @@ public class SleepAverage extends Health
       System.out.print("Please enter age(7+): ");
       personAge = keyboard.nextInt();
 
-      if (personAge < 7 || personAge > 120)
+      if (personAge < 7 || personAge > 122)
       {
          System.out.println("This is an invalid age");
       } else
@@ -72,7 +72,6 @@ public class SleepAverage extends Health
    public String sleepComparison(int age, int weeklySleepAverage) //Check this if statements are correct.
    {
 
-      /* May need to do if statements for age and then a nested if for weeklySleepAverage. */
 
       if (age < 7)
          return("Please enter a valid age for comparison");
@@ -88,12 +87,12 @@ public class SleepAverage extends Health
         if (age  >= 7 && age <= 13)
            if (weeklySleepAverage < 63)
            {
-              return ("You are not sleeping enough for you age (Recommended between 56 - 77 hours per week)");
+              return ("You are not sleeping enough for your age (Recommended between 56 - 77 hours per week)");
            }
         if (age  >= 7 && age <= 13)
         {
            if (weeklySleepAverage > 77)
-              return ("You are not sleeping enough for you age (Recommended between 56 - 77 hours per week)");
+              return ("You are not sleeping enough for your age (Recommended between 56 - 77 hours per week)");
         }
       }
 
@@ -112,7 +111,7 @@ public class SleepAverage extends Health
                return ("You are not sleeping enough for you age (Recommended between 56 - 70 hours per week)");
          }
 
-         if (age <= 17)
+         if (age >= 14 && age <=17)
          {
             if (weeklySleepAverage > 70)
                return ("You are sleeping to much for your age (Recommended between 56 - 70 hours per week");
@@ -162,7 +161,7 @@ public class SleepAverage extends Health
                   return ("You are sleeping to much for your age(Recommended between 49 - 56 hours per week)");
             }
          }
-         else //Need to add an exception if no age is entered or if the person has slept under the average. Check the statements.
+         else //Need to add an exception if no age is entered or if the person has slept under the average.
          {
             return ("Please enter valid age!");
          }
