@@ -27,8 +27,7 @@ public class UltraHealth
             } catch (InputMismatchException error)
             {
                System.out.println("Please only enter a number between 1 & 5!\n");
-               keyboard.nextLine();
-               menuChoice = prompt();
+               menuChoice = 9;
             }
          } while (menuChoice != 1 & menuChoice != 2 & menuChoice != 3 & menuChoice != 4 & menuChoice != 5);
 
